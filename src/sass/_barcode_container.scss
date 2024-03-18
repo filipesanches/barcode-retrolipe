@@ -1,0 +1,61 @@
+.barcode-container {
+  margin: 20px 0;
+  font: 400 10pt 'Source Code Pro', monospace;
+  background-color: rgba(253, 235, 215, 0.952);
+  border-radius: 3px;
+  & span {
+    font-weight: 700;
+    font-size: 15pt;
+    display: block;
+    padding: 20px;
+  }
+}
+
+.barcode-options-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  .barcode-options-itens {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+      width: 100%;
+      text-align: center;
+      background-color: gray;
+      color: #fff;
+      padding: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+@media only screen and (max-width: 795px) {
+  .barcode-container {
+    & span {
+      font-size: 12pt;
+    }
+    & span::after{
+      content: '\f85c';
+      font-family: 'Material Icons';
+      padding-left: 5px;
+    }
+  }
+
+  .barcode-options-container {
+    grid-template-columns: repeat(2, 1fr); /* Altera o número de colunas para 2 */
+    .barcode-options-itens {
+      padding: 10px 5px;
+      p {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

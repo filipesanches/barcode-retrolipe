@@ -1,0 +1,58 @@
+.images-container {
+  padding: 20px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  & div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    & [data-label] {
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid #969696;
+      margin-bottom: 5px;
+      align-items: center;
+    }
+
+    & a {
+      margin-bottom: 15px;
+      text-decoration: none;
+      font: 400 12pt 'Source Code Pro', monospace;
+      color: #ffffff;
+      background-color: #007bff;
+      padding: 5px 10px;
+      border-radius: 2px;
+      transition: background-color 0.5s ease;
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+
+    & a::after {
+      content: '\f090';
+      /* Adicionando o ícone de download */
+      font-family: 'Material Icons';
+      /* Definindo a fonte que contém o ícone */
+    }
+
+    & a:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .images-container div {
+    flex-flow: column nowrap;
+    & a {
+      margin: 0 0 10px 0;
+    }
+    & a::before {
+      content: 'Download';
+      margin-right: 5px;
+    }
+  }
+}

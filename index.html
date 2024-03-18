@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retrolipe Barcode</title>
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script defer type="module" src="src/js/controller.js"></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="grid-item">
+        <div id="barcode-logo">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <h2><span>Generate Barcode</span><span>&ThinSpace;retrolipe&ThinSpace;</span></h2>
+        </div>
+      </header>
+      <section class="grid-item">
+        <div class="barcode-container">
+          <span>Select the barcode type to generate</span>
+          <div class="barcode-options-container">
+            <div class="barcode-options-itens">
+              <p>CODE128</p>
+
+              <div>
+                <input type="checkbox" id="code128" name="code128" value="CODE128" />
+                <label for="code128">CODE128</label>
+              </div>
+            </div>
+
+            <div class="barcode-options-itens">
+              <p>EAN</p>
+
+              <div>
+                <input type="checkbox" id="ean13" name="ean13" value="EAN13" checked/>
+                <label for="ean13">EAN-13</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="ean8" name="ean8" value="EAN8" />
+                <label for="ean8">EAN-8</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="ean5" name="ean5" value="EAN5" />
+                <label for="ean5">EAN-5</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="ean2" name="ean2" value="EAN2" />
+                <label for="ean2">EAN-2</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="upca" name="upca" value="UPC (A)" />
+                <label for="upca">UPC (A)</label>
+              </div>
+
+              <div>
+                <input type="checkbox" id="upce" name="upce" value="UPC (E)" />
+                <label for="upce">UPC (E)</label>
+              </div>
+            </div>
+
+            <div class="barcode-options-itens">
+              <p>CODE39</p>
+              <div>
+                <input type="checkbox" id="code39" name="code39" value="CODE39" />
+                <label for="code39">CODE39</label>
+              </div>
+            </div>
+
+            <div class="barcode-options-itens">
+              <p>ITF</p>
+              <div>
+                <input type="checkbox" id="itf" name="itf" value="ITF" />
+                <label for="itf">ITF</label>
+              </div>
+              <div>
+                <input type="checkbox" id="itf-14" name="itf-14" value="ITF-14" />
+                <label for="itf-14">ITF-14</label>
+              </div>
+            </div>
+
+            <div class="barcode-options-itens">
+              <p>ITF</p>
+              <div>
+                <input type="checkbox" id="msi10" name="msi10" value="MSI10" />
+                <label for="msi10">MSI10</label>
+              </div>
+              <div>
+                <input type="checkbox" id="msi11" name="msi11" value="MSI11" />
+                <label for="msi11">MSI11</label>
+              </div>
+              <div>
+                <input type="checkbox" id="msi1010" name="msi1010" value="MSI1010" />
+                <label for="msi1010">MSI1010</label>
+              </div>
+              <div>
+                <input type="checkbox" id="msi1110" name="msi1110" value="MSI1110" />
+                <label for="msi1110">MSI1110</label>
+              </div>
+            </div>
+
+            <div class="barcode-options-itens">
+              <p>pharmacode</p>
+              <div>
+                <input type="checkbox" id="pharmacode" name="pharmacode" value="pharmacode" />
+                <label for="pharmacode">pharmacode</label>
+              </div>
+            </div>
+
+            <div class="barcode-options-itens">
+              <p>Codabar</p>
+              <div>
+                <input type="checkbox" id="codabar" name="codabar" value="codabar" />
+                <label for="codabar">Codabar</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="generate-barcode-container">
+          <div><input type="text" id="barcode" placeholder="Enter the code here." value="1234" /> <button id="generate-barcode">Generate</button></div>
+        </div>
+      </section>
+      <section class="grid-item">
+        <img id="barcode-svg" />
+
+        <div class="images-container"> 
+          <div><img id="img-code-code128" data-label="CODE128" /></div>
+          <div><img id="img-code-ean-13" data-label="EAN13" /></div>
+          <div><img id="img-code-ean-8" data-label="EAN8" /></div>
+          <div><img id="img-code-ean-5" data-label="EAN5" /></div>
+          <div><img id="img-code-ean-2" data-label="EAN2" /></div>
+          <div><img id="img-code-upc-a" data-label="UPC (A)" /></div>
+          <div><img id="img-code-upc-e" data-label="UPC (E)" /></div>
+          <div><img id="img-code-code39" data-label="CODE39" /></div>
+          <div><img id="img-code-itf" data-label="ITF" /></div>
+          <div><img id="img-code-itf-14" data-label="ITF-14" /></div>
+          <div><img id="img-code-msi10" data-label="MSI10" /></div>
+          <div><img id="img-code-msi11" data-label="MSI11" /></div>
+          <div><img id="img-code-msi1010" data-label="MSI1010" /></div>
+          <div><img id="img-code-msi1110" data-label="MSI1110" /></div>
+          <div><img id="img-code-pharmacode" data-label="pharmacode" /></div>
+          <div><img id="img-code-codabar" data-label="codabar" /></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

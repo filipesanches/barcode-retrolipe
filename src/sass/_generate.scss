@@ -1,0 +1,64 @@
+.generate-barcode-container {
+  padding: 2px 0px 0px 0px;
+
+  & div {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    background: #f2f2f2; /* Mudança para um tom de cinza mais claro */
+    max-width: 700px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); /* Mantém a sombra */
+    border: 1px solid #ccc; /* Mudança para um tom de cinza mais escuro para a borda */
+    transition: all 0.3s ease; /* Transição suave para mudanças */
+
+    & input {
+      font: 500 12pt 'Source Code Pro', monospace;
+      width: 100%;
+      border: 2px solid transparent;
+      border-right: none;
+      outline: none;
+      padding: 10px;
+      border-top-left-radius: 5px; /* Cantos arredondados apenas no input */
+      border-bottom-left-radius: 5px; /* Cantos arredondados apenas no input */
+      transition: border-color 0.8s ease;
+      background-color: #ffffff; /* Mudança para um tom de cinza mais claro */
+    }
+
+    & button {
+      font: 600 13pt 'Source Code Pro', monospace;
+      padding: 0 20px;
+      border: 2px solid transparent;
+      outline: none;
+      background-color: #007bff; /* Cor de fundo do botão em um tom de azul */
+      color: #fff; /* Cor do texto do botão */
+      cursor: pointer;
+      border-top-right-radius: 5px; /* Cantos arredondados apenas no botão */
+      border-bottom-right-radius: 5px; /* Cantos arredondados apenas no botão */
+      transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+      display: flex;
+      align-items: center;
+    }
+
+    & button::after{
+      content: '\e876';
+      font-family: 'Material Icons';
+      padding-left: 5px;
+    }
+
+    & button:hover {
+      background-color: #0056b3; /* Mudança de cor de fundo ao passar o mouse para um tom de azul mais escuro */
+    }
+
+    & input::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    & input:focus {
+      border-color: #007bff; /* Mudança de cor da borda ao focar */
+    }
+  }
+}

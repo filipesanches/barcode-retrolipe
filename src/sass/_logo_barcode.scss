@@ -1,0 +1,153 @@
+#barcode-logo {
+  margin-top: 10px;
+  max-width: 500px; /* Defina apenas a largura máxima */
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding: 40px;
+  // background-color: #fff;
+  // background: linear-gradient(to bottom right, #e6e6e6, #ffffff); // Adicionando um gradiente sutil ao fundo
+  border-radius: 10px; // Arredondando as bordas do logo
+  box-shadow: 0 0 15px 0px #0000001a; // Adicionando uma sombra suave ao logo
+
+  div {
+    position: absolute;
+    border: 2px solid #000;
+    width: 30px;
+    height: 30px;
+
+    &:nth-child(1) {
+      top: 30px;
+      left: 30px;
+      border-right: none;
+      border-bottom: none;
+      border-radius: 10px 0 0 0;
+    }
+
+    &:nth-child(2) {
+      top: 30px;
+      right: 30px;
+      border-left: none;
+      border-bottom: none;
+      border-radius: 0 10px 0 0;
+    }
+
+    &:nth-child(3) {
+      bottom: 30px;
+      left: 30px;
+      border-right: none;
+      border-top: none;
+      border-radius: 0 0 0 10px;
+    }
+
+    &:nth-child(4) {
+      bottom: 30px;
+      right: 30px;
+      border-left: none;
+      border-top: none;
+      border-radius: 0 0 10px 0;
+    }
+  }
+
+  h2 {
+    span {
+      display: block;
+
+      &:nth-child(1) {
+        font-family: 'Source Code Pro', monospace;
+        padding-bottom: 10px;
+      }
+
+      &:nth-child(2) {
+        border: none;
+        position: relative;
+        font: 400 80pt 'Libre Barcode 128 Text', cursive;
+        color: #333; // Mudando a cor do texto para uma cor mais escura
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); // Adicionando uma sombra suave ao texto
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% + 10px);
+          height: 3px;
+          border: none;
+          background-color: red;
+          box-shadow: 0 0 2px 0.5px rgba(255, 0, 0, 0.7), 0 0 4px 1px rgba(255, 0, 0, 0.7), 0 0 6px 1.5px rgba(255, 0, 0, 0.7), 0 0 8px 2px rgba(255, 0, 0, 0.7), 0 0 10px 2.5px rgba(255, 0, 0, 0.7),
+            0 0 12px 3px rgba(255, 0, 0, 0.7), 0 0 14px 3.5px rgba(255, 0, 0, 0.7); // Efeito de brilho com tons de vermelho
+          animation: scan 1s ease-in-out infinite, blink 0.0251s alternate infinite, glow 0.5s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes scan {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #barcode-logo {
+    padding: 20px;
+    max-width: 300px;
+    div {
+      &:nth-child(1) {
+        top: 10px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+      }
+
+      &:nth-child(2) {
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+
+      &:nth-child(3) {
+        bottom: 10px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+      }
+
+      &:nth-child(4) {
+        bottom: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    h2 {
+      span {
+        
+        &:nth-child(1) {
+          font-size: 15pt;
+        }
+        &:nth-child(2) {
+          font-size: 50pt !important;
+        }
+      }
+    }
+  }
+}
