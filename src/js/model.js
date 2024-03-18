@@ -1,5 +1,5 @@
-function CreateModelBarcode() {
-  async function getTypeBarcodes() {
+const CreateModelBarcode = () => {
+  const getTypeBarcodes = async () => {
     const inputsTypeValue = document.querySelectorAll('.barcode-options-container [type="checkbox"]:checked');
     const typesBarcode = Array.from(inputsTypeValue, (input) => input.value);
     return typesBarcode;

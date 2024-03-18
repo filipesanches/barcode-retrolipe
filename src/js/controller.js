@@ -3,11 +3,11 @@ import 'regenerator-runtime/runtime';
 import { ViewBarcode } from './view';
 import { CreateModelBarcode } from './model';
 
-function ControllerBarcode() {
+const ControllerBarcode = () => {
   const view = ViewBarcode();
   const model = CreateModelBarcode();
 
-  async function clickGenerate() {
+  const clickGenerate = async () => {
     try {
       view.hideElementLabel();
       const typesBarcode = await model.getTypeBarcodes();
@@ -18,7 +18,7 @@ function ControllerBarcode() {
     }
   }
 
-  function initController() {
+  const initController = () => {
     view.hideElementLabel();
     view.resetInputs();
     const buttonGenerate = document.querySelector('#generate-barcode');
