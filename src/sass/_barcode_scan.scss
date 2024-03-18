@@ -1,0 +1,27 @@
+#barcode-scan {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 500px;
+  height: 200px;
+  background-color: #000;
+  box-shadow: 0 0 100px 100px rgba(0, 0, 0, 0.5);
+}
+
+#barcode-scan::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 1px;
+  background-color: red;
+  box-shadow: 0 0 2px 0.5px rgba(255, 0, 0, 0.7), 0 0 4px 1px rgba(255, 0, 0, 0.7), 0 0 6px 1.5px rgba(255, 0, 0, 0.7), 0 0 8px 2px rgba(255, 0, 0, 0.7), 0 0 10px 2.5px rgba(255, 0, 0, 0.7), 0 0 12px 3px rgba(255, 0, 0, 0.7), 0 0 14px 3.5px rgba(255, 0, 0, 0.7);
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  animation: blink 0.0251s alternate infinite;
+}

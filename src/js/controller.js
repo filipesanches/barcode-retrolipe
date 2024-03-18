@@ -2,6 +2,7 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 import { viewBarcode } from "./view";
 import { modelBarcode } from "./model";
+import Quagga from "quagga";
 
 const controllerBarcode = () => {
   const view = viewBarcode();
@@ -42,3 +43,24 @@ const controllerBarcode = () => {
 
 const controller = controllerBarcode();
 controller.initController();
+
+
+Quagga.init({
+  inputStream : {
+    name : "Live",
+    type : "LiveStream",
+    target: document.querySelector('#barcode-scan')    // Or '#yourElement' (optional)
+  },
+  decoder : {
+    readers : ["code_128_reader"]
+  }
+}, function(err) {
+    if (err) {
+        console.log(err);
+        return
+    }
+    console.log("Initialization finished. Ready to start");
+    Quagga.start();
+});
+
+Quagga.onDetected(data => console.log(data.codeResult.code));

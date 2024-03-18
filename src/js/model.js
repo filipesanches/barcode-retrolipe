@@ -1,4 +1,10 @@
+// import { Quagga } from "quagga";
+
+
+
 const modelBarcode = () => {
+  
+
   const getTypeBarcodes = async () => {
     try {
       const inputsTypeValue = document.querySelectorAll(

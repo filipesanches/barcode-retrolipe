@@ -15,7 +15,10 @@
           <div></div>
           <div></div>
           <div></div>
-          <h2><span>Generate Barcode</span><span>&ThinSpace;retrolipe&ThinSpace;</span></h2>
+          <h2>
+            <span>Generate Barcode</span
+            ><span>&ThinSpace;retrolipe&ThinSpace;</span>
+          </h2>
         </div>
       </header>
       <section class="grid-item">
@@ -26,7 +29,12 @@
               <p>CODE128</p>
 
               <div>
-                <input type="checkbox" id="code128" name="code128" value="CODE128" />
+                <input
+                  type="checkbox"
+                  id="code128"
+                  name="code128"
+                  value="CODE128"
+                />
                 <label for="code128">CODE128</label>
               </div>
             </div>
@@ -35,7 +43,13 @@
               <p>EAN</p>
 
               <div>
-                <input type="checkbox" id="ean13" name="ean13" value="EAN13" checked/>
+                <input
+                  type="checkbox"
+                  id="ean13"
+                  name="ean13"
+                  value="EAN13"
+                  checked
+                />
                 <label for="ean13">EAN-13</label>
               </div>
 
@@ -58,13 +72,17 @@
                 <input type="checkbox" id="upc" name="upc" value="UPC" />
                 <label for="upc">UPC</label>
               </div>
-
             </div>
 
             <div class="barcode-options-itens">
               <p>CODE39</p>
               <div>
-                <input type="checkbox" id="code39" name="code39" value="CODE39" />
+                <input
+                  type="checkbox"
+                  id="code39"
+                  name="code39"
+                  value="CODE39"
+                />
                 <label for="code39">CODE39</label>
               </div>
             </div>
@@ -76,7 +94,12 @@
                 <label for="itf">ITF</label>
               </div>
               <div>
-                <input type="checkbox" id="itf-14" name="itf-14" value="ITF14" />
+                <input
+                  type="checkbox"
+                  id="itf-14"
+                  name="itf-14"
+                  value="ITF14"
+                />
                 <label for="itf-14">ITF-14</label>
               </div>
             </div>
@@ -92,11 +115,21 @@
                 <label for="msi11">MSI11</label>
               </div>
               <div>
-                <input type="checkbox" id="msi1010" name="msi1010" value="MSI1010" />
+                <input
+                  type="checkbox"
+                  id="msi1010"
+                  name="msi1010"
+                  value="MSI1010"
+                />
                 <label for="msi1010">MSI1010</label>
               </div>
               <div>
-                <input type="checkbox" id="msi1110" name="msi1110" value="MSI1110" />
+                <input
+                  type="checkbox"
+                  id="msi1110"
+                  name="msi1110"
+                  value="MSI1110"
+                />
                 <label for="msi1110">MSI1110</label>
               </div>
             </div>
@@ -104,7 +137,12 @@
             <div class="barcode-options-itens">
               <p>pharmacode</p>
               <div>
-                <input type="checkbox" id="pharmacode" name="pharmacode" value="pharmacode" />
+                <input
+                  type="checkbox"
+                  id="pharmacode"
+                  name="pharmacode"
+                  value="pharmacode"
+                />
                 <label for="pharmacode">pharmacode</label>
               </div>
             </div>
@@ -112,22 +150,36 @@
             <div class="barcode-options-itens">
               <p>Codabar</p>
               <div>
-                <input type="checkbox" id="codabar" name="codabar" value="codabar" />
+                <input
+                  type="checkbox"
+                  id="codabar"
+                  name="codabar"
+                  value="codabar"
+                />
                 <label for="codabar">Codabar</label>
               </div>
             </div>
           </div>
-
         </div>
         <div class="generate-barcode-container">
-          <div><input type="text" id="barcode" placeholder="Enter the code here." value="1234" /> <button id="generate-barcode">Generate</button></div>
+          <div>
+            <input
+              type="text"
+              id="barcode"
+              placeholder="Enter the code here."
+              value="1234"
+            />
+            <button id="capture-barcode">
+            </button>
+            <button id="generate-barcode">Generate</button>
+          </div>
         </div>
       </section>
       <section class="grid-item">
-
-        <div class="images-container"> </div>
-
+        <div class="images-container"></div>
       </section>
     </div>
+
+    <div id="barcode-scan"></div>
   </body>
 </html>

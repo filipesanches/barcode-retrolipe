@@ -27,28 +27,41 @@
       background-color: #ffffff; /* Mudança para um tom de cinza mais claro */
     }
 
-    & button {
+    & button{
       font: 600 13pt 'Source Code Pro', monospace;
+      outline: none;
       padding: 0 20px;
       border: 2px solid transparent;
-      outline: none;
-      background-color: #007bff; /* Cor de fundo do botão em um tom de azul */
       color: #fff; /* Cor do texto do botão */
       cursor: pointer;
-      border-top-right-radius: 5px; /* Cantos arredondados apenas no botão */
-      border-bottom-right-radius: 5px; /* Cantos arredondados apenas no botão */
       transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
       display: flex;
       align-items: center;
     }
 
-    & button::after{
+    & button#capture-barcode{
+      background-color: #004997;
+      
+    }
+
+    & button#capture-barcode::after {
+      content: '\e412';
+      font-family: 'Material Icons';
+    }
+
+    & button#generate-barcode {
+      background-color: #007bff;
+      border-top-right-radius: 5px; /* Cantos arredondados apenas no botão */
+      border-bottom-right-radius: 5px; /* Cantos arredondados apenas no botão */
+    }
+
+    & button#generate-barcode::after {
       content: '\e876';
       font-family: 'Material Icons';
       padding-left: 5px;
     }
 
-    & button:hover {
+    & button#generate-barcode:hover {
       background-color: #0056b3; /* Mudança de cor de fundo ao passar o mouse para um tom de azul mais escuro */
     }
 

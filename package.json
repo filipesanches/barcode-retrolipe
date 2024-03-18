@@ -20,6 +20,7 @@
     "core-js": "^3.36.0",
     "jsbarcode": "^3.11.6",
     "material-icons": "^1.13.12",
+    "quagga": "^0.12.1",
     "regenerator-runtime": "^0.14.1"
   }
 }
