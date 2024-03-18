@@ -1,11 +1,11 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import { ViewBarcode } from './view';
-import { CreateModelBarcode } from './model';
+import { viewBarcode } from './view';
+import { modelBarcode } from './model';
 
-const ControllerBarcode = () => {
-  const view = ViewBarcode();
-  const model = CreateModelBarcode();
+const controllerBarcode = () => {
+  const view = viewBarcode();
+  const model = modelBarcode();
 
   const clickGenerate = async () => {
     try {
@@ -30,7 +30,7 @@ const ControllerBarcode = () => {
   };
 }
 
-const controller = ControllerBarcode();
+const controller = controllerBarcode();
 controller.initController();
 
-export { ControllerBarcode };
+export { controllerBarcode };

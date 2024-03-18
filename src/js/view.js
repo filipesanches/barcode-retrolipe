@@ -1,6 +1,6 @@
 import JsBarcode from 'jsbarcode';
 
-const ViewBarcode = () => {
+const viewBarcode = () => {
   const resetInputs = () => {
     const checkboxes = document.querySelectorAll('.barcode-options-container [type="checkbox"]');
     checkboxes.forEach((checkbox) => (checkbox.checked = false));
@@ -74,4 +74,4 @@ const ViewBarcode = () => {
   };
 }
 
-export { ViewBarcode };
+export { viewBarcode };

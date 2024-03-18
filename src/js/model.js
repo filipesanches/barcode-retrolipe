@@ -1,4 +1,4 @@
-const CreateModelBarcode = () => {
+const modelBarcode = () => {
   const getTypeBarcodes = async () => {
     const inputsTypeValue = document.querySelectorAll('.barcode-options-container [type="checkbox"]:checked');
     const typesBarcode = Array.from(inputsTypeValue, (input) => input.value);
@@ -10,4 +10,4 @@ const CreateModelBarcode = () => {
   };
 }
 
-export { CreateModelBarcode };
+export { modelBarcode };
