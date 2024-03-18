@@ -1,7 +1,7 @@
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
-import { viewBarcode } from './view';
-import { modelBarcode } from './model';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+import { viewBarcode } from "./view";
+import { modelBarcode } from "./model";
 
 const controllerBarcode = () => {
   const view = viewBarcode();
@@ -9,28 +9,36 @@ const controllerBarcode = () => {
 
   const clickGenerate = async () => {
     try {
-      view.hideElementLabel();
+      await view.hideElementLabel();
+      await view.createSpinner();
+      const barcodeValue = document.querySelector("#barcode").value;
       const typesBarcode = await model.getTypeBarcodes();
-      console.log(typesBarcode);
-      view.renderBarcode(typesBarcode, document.querySelector('#barcode').value);
+      // await view.renderBarcode(typesBarcode, barcodeValue);
+      // view.hideSpinner();
+      setTimeout(() => {
+        view.renderBarcode(typesBarcode, barcodeValue);
+        view.hideSpinner();
+      }, 300); // teste spiner
     } catch (error) {
-      console.error('Error occurred:', error);
+      console.error("Error occurred:", error);
     }
-  }
+  };
 
-  const initController = () => {
-    view.hideElementLabel();
-    view.resetInputs();
-    const buttonGenerate = document.querySelector('#generate-barcode');
-    buttonGenerate.addEventListener('click', clickGenerate);
-  }
+  const initController = async () => {
+    try {
+      await view.hideElementLabel();
+      await view.resetInputs();
+      const buttonGenerate = document.querySelector("#generate-barcode");
+      buttonGenerate.addEventListener("click", clickGenerate);
+    } catch (error) {
+      console.error("Error occurred during initialization:", error);
+    }
+  };
 
   return {
     initController,
   };
-}
+};
 
 const controller = controllerBarcode();
 controller.initController();
-
-export { controllerBarcode };
